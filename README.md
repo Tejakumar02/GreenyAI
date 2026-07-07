@@ -124,6 +124,7 @@ greenyai/
 ├── .streamlit/
 │   └── secrets.toml        # API keys & config (not committed)
 └── README.md
+
 ```
 
 ---
