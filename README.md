@@ -122,6 +122,7 @@ Then open the URL Streamlit prints (usually `http://localhost:8501`).
 greenyai/
 ├── app.py                  # Main Streamlit application (this file)
 ├── .streamlit/
+|__  config.toml
 │   └── secrets.toml        # API keys & config (not committed)
 └── README.md
 ├── requirements.txt
