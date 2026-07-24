@@ -5,6 +5,7 @@ import numpy as np
 from sentence_transformers import SentenceTransformer
 from supabase import create_client
 import uuid
+import time
 from datetime import datetime
 from zoneinfo import ZoneInfo
 import streamlit.components.v1 as components
@@ -19,6 +20,7 @@ try:
     GEMINI_AVAILABLE = True
 except ImportError:
     GEMINI_AVAILABLE = False
+# ---- END NEW ----
 
 # ---- PAGE CONFIG (must be first) ----
 st.set_page_config(
@@ -635,7 +637,7 @@ def delete_chat_messages(user_id, chat_id):
         query = query.eq("chat_id", chat_id)
     query.execute()
 
-# ----  chat session management ----
+# ---- NEW: chat session management ----
 def new_chat():
     new_id = str(uuid.uuid4())
     st.session_state.chats[new_id] = {
@@ -883,7 +885,7 @@ with st.sidebar:
     </div>
     """, unsafe_allow_html=True)
 
-    # ----  Model selection — moved here from the main bar ----
+    # ---- NEW: Model selection — moved here from the main bar ----
     st.markdown('<div class="sidebar-label">Model</div>', unsafe_allow_html=True)
     st.session_state.selected_model = st.selectbox(
         "", model_options,
@@ -911,6 +913,9 @@ with st.sidebar:
             if st.button(label, key=f"select_{chat_id}", use_container_width=True):
                 st.session_state.current_chat_id = chat_id
                 st.session_state.chips_used = len(chat["messages"]) > 0
+                # NEW: each chat has its own pdf_store/image_store now, so
+                # reset the selector widgets rather than carrying over
+                # whatever was selected in the chat you're leaving.
                 st.session_state["pdf_selectbox"] = NONE_OPTION
                 st.session_state["image_selectbox"] = NONE_OPTION
                 st.rerun()
