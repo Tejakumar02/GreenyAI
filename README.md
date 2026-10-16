@@ -61,7 +61,7 @@ GreenyAI is a full-featured, dark-themed AI chat assistant built with **Streamli
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/greenyai.git
+git clone https://github.com/Tejakumar02/GreenyAI.git
 cd greenyai
 ```
 
