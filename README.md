@@ -2,9 +2,15 @@
 
 GreenyAI is a full-featured, dark-themed AI chat assistant built with **Streamlit**. It combines fast LLM chat (via **Groq**), document Q&A (**RAG over PDFs**), image understanding (**Gemini Vision**), live web search (**Tavily**), and persistent multi-chat history (**Supabase**) — all wrapped in a custom ChatGPT-style UI.
 
+[![Live App](https://img.shields.io/badge/Live_App-greenyai.streamlit.app-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://greenyai.streamlit.app/)
+
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B)
 ![License](https://img.shields.io/badge/License-MIT-green)
+
+👉 **Try it live:** [greenyai.streamlit.app](https://greenyai.streamlit.app/)
+
+![GreenyAI screenshot](assets/screenshot.png)
 
 ---
 
